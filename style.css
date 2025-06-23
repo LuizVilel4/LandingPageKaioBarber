@@ -1,0 +1,1391 @@
+/* ===========================================
+   KAIO BARBER - LANDING PAGE STYLES
+   =========================================== */
+
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores principais */
+    --primary-color: #d4af37;     /* Dourado elegante */
+    --secondary-color: #1a1a1a;   /* Cinza escuro */
+    --accent-color: #333333;      /* Cinza médio */
+    --bg-dark: #0a0a0a;          /* Preto profundo */
+    --text-light: #ffffff;        /* Branco */
+    --text-gray: #cccccc;         /* Cinza claro */
+    
+    /* Tipografia */
+    --font-primary: 'Poppins', sans-serif;
+    --font-size-small: 14px;
+    --font-size-normal: 16px;
+    --font-size-large: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    --font-size-hero: 48px;
+    
+    /* Espaçamentos */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+    
+    /* Sombras */
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Configurações gerais */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container padrão */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Títulos de seção */
+.section-title {
+    font-size: var(--font-size-xxl);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 600;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+}
+
+/* Botões */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary-color), #b8941f);
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--font-size-normal);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-medium);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+    filter: brightness(1.1);
+}
+
+/* =====================================
+   CABEÇALHO (HEADER) - LOGO ATUALIZADA
+   ===================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: var(--shadow-medium);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* ESTILO DA NOVA LOGO NO CABEÇALHO */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: all var(--transition-normal);
+}
+
+.logo-image:hover {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+}
+
+.nav-logo h2 {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    display: none; /* Esconde o texto quando há logo */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Menu toggle para mobile */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: var(--font-size-large);
+}
+
+/* =====================================
+   SEÇÃO HERO - LOGO ATUALIZADA
+   ===================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="90" cy="90" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="50" cy="30" r="1" fill="%23d4af37" opacity="0.1"/></svg>');
+    pointer-events: none;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-title {
+    font-size: var(--font-size-hero);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 1s ease;
+}
+
+.highlight {
+    color: var(--primary-color);
+    text-shadow: var(--shadow-gold);
+}
+
+.hero-description {
+    font-size: var(--font-size-large);
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-xl);
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: 500px;
+    object-fit: contain; /* Mudado para contain para preservar a logo */
+    border-radius: 20px;
+    box-shadow: var(--shadow-heavy);
+    animation: fadeInRight 1s ease 0.4s backwards;
+    background: rgba(255, 255, 255, 0.05); /* Fundo sutil para destacar a logo */
+    padding: var(--spacing-md);
+}
+
+/* =====================================
+   SEÇÃO SERVIÇOS
+   ===================================== */
+.services {
+    padding: var(--spacing-xxl) 0;
+    background: var(--secondary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background: var(--bg-dark);
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.service-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-light);
+}
+
+.service-card p {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.price {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* =====================================
+   GALERIA DE CORTES - IMAGENS ATUALIZADAS
+   ===================================== */
+.gallery {
+    padding: var(--spacing-xxl) 0;
+    background: var(--bg-dark);
+}
+
+.gallery-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+}
+
+.carousel-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(212, 175, 55, 0.9);
+    color: var(--bg-dark);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    transition: all var(--transition-normal);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* Indicadores do carrossel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-xs);
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.indicator.active,
+.indicator:hover {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* =====================================
+   SEÇÃO: NOSSOS BARBEIROS - FOTOS ATUALIZADAS
+   ===================================== */
+.barbers {
+    padding: var(--spacing-xxl) 0;
+    background: var(--secondary-color);
+}
+
+/* Perfil individual de cada barbeiro */
+.barber-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-xl);
+    background: var(--bg-dark);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.barber-profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+    transition: left var(--transition-slow);
+}
+
+.barber-profile:hover::before {
+    left: 100%;
+}
+
+.barber-profile:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Informações do barbeiro */
+.barber-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* NOVO ESTILO PARA FOTO DE PERFIL DOS BARBEIROS */
+.barber-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.barber-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-gold);
+    transition: all var(--transition-normal);
+}
+
+.barber-profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.barber-name {
+    font-size: var(--font-size-xxl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    text-align: center;
+}
+
+.barber-description {
+    color: var(--text-gray);
+    font-size: var(--font-size-large);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+/* Botões de ação do barbeiro */
+.barber-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.btn-barber {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--font-size-normal);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botão de agendamento */
+.btn-barber.schedule {
+    background: linear-gradient(135deg, var(--primary-color), #b8941f);
+    color: var(--bg-dark);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-barber.schedule:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+    filter: brightness(1.1);
+}
+
+/* Botão do Instagram */
+.btn-barber.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: var(--text-light);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-barber.instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(240, 148, 51, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Galeria individual do barbeiro */
+.barber-gallery {
+    position: relative;
+}
+
+.barber-carousel {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    background: var(--accent-color);
+}
+
+.barber-carousel-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.barber-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.barber-slide.active {
+    opacity: 1;
+}
+
+.barber-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+/* Botões de navegação do carrossel do barbeiro */
+.barber-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(212, 175, 55, 0.9);
+    color: var(--bg-dark);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--font-size-normal);
+    transition: all var(--transition-normal);
+    z-index: 10;
+}
+
+.barber-carousel-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.barber-carousel-btn.prev {
+    left: 15px;
+}
+
+.barber-carousel-btn.next {
+    right: 15px;
+}
+
+/* Indicadores do carrossel do barbeiro */
+.barber-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-xs);
+    z-index: 10;
+}
+
+.barber-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.barber-indicator.active,
+.barber-indicator:hover {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* =====================================
+   SEÇÃO LOCALIZAÇÃO
+   ===================================== */
+.location {
+    padding: var(--spacing-xxl) 0;
+    background: var(--bg-dark);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.info-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+    margin-top: 5px;
+    min-width: 24px;
+}
+
+.info-item h3 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-light);
+}
+
+.info-item p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.location-map {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+.location-map iframe {
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    transition: filter var(--transition-normal);
+}
+
+.location-map:hover iframe {
+    filter: grayscale(0%) invert(0%) contrast(100%);
+}
+
+/* =====================================
+   SEÇÃO CONTATO
+   ===================================== */
+.contact {
+    padding: var(--spacing-xxl) 0;
+    background: var(--secondary-color);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-card {
+    background: var(--bg-dark);
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.contact-card:hover::before {
+    left: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-gold);
+}
+
+.contact-card i {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.contact-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-card p {
+    color: var(--text-gray);
+}
+
+/* Cores específicas para cada tipo de contato */
+.contact-card.whatsapp:hover {
+    border-color: #25d366;
+}
+
+.contact-card.whatsapp:hover i {
+    color: #25d366;
+}
+
+.contact-card.phone:hover {
+    border-color: #007bff;
+}
+
+.contact-card.phone:hover i {
+    color: #007bff;
+}
+
+.contact-card.email:hover {
+    border-color: #dc3545;
+}
+
+.contact-card.email:hover i {
+    color: #dc3545;
+}
+
+/* Redes sociais */
+.social-media {
+    text-align: center;
+}
+
+.social-media h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: var(--font-size-xl);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.1);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-gold);
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+}
+
+.social-link.tiktok:hover {
+    background: linear-gradient(45deg, #ff0050, #000000);
+}
+
+/* =====================================
+   SEÇÃO AVALIAÇÕES
+   ===================================== */
+.reviews {
+    padding: var(--spacing-xxl) 0;
+    background: var(--bg-dark);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.review-card {
+    background: var(--secondary-color);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+    transition: all var(--transition-normal);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--primary-color);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.review-info h4 {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.stars i {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.review-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Avaliação geral */
+.overall-rating {
+    text-align: center;
+    background: var(--secondary-color);
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+.rating-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.rating-stars {
+    font-size: var(--font-size-xl);
+    margin: var(--spacing-sm) 0;
+}
+
+.rating-stars i {
+    color: var(--primary-color);
+}
+
+.overall-rating p {
+    color: var(--text-gray);
+    font-size: var(--font-size-large);
+}
+
+/* =====================================
+   RODAPÉ - LOGO ATUALIZADA
+   ===================================== */
+.footer {
+    background: var(--bg-dark);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    border-top: 1px solid var(--accent-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ESTILO DA NOVA LOGO NO RODAPÉ */
+.footer-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: var(--spacing-xs);
+    filter: brightness(1.1);
+    transition: all var(--transition-normal);
+}
+
+.footer-logo:hover {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+}
+
+.footer-brand h3 {
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    display: none; /* Esconde o texto quando há logo */
+}
+
+.footer-brand p {
+    color: var(--text-gray);
+}
+
+.footer-social {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.footer-social a:hover {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--accent-color);
+}
+
+.footer-bottom p {
+    color: var(--text-gray);
+    font-size: var(--font-size-small);
+}
+
+/* =====================================
+   BOTÃO VOLTAR AO TOPO
+   ===================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* =====================================
+   ANIMAÇÕES
+   ===================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* =====================================
+   RESPONSIVIDADE
+   ===================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --font-size-hero: 36px;
+        --font-size-xxl: 28px;
+        --font-size-xl: 20px;
+        --spacing-xxl: 48px;
+        --spacing-xl: 32px;
+    }
+    
+    /* Menu mobile */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: var(--spacing-xl);
+        transition: left var(--transition-normal);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    /* Logo responsiva */
+    .logo-image {
+        height: 40px;
+    }
+    
+    .footer-logo {
+        height: 50px;
+    }
+    
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px var(--spacing-md) var(--spacing-xl);
+    }
+    
+    .hero-content {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .hero-image img {
+        height: 300px;
+    }
+    
+    /* Barbeiros - Layout responsivo */
+    .barber-profile {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .barber-actions {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .barber-carousel-container {
+        height: 300px;
+    }
+    
+    /* Foto de perfil dos barbeiros responsiva */
+    .barber-profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Localização */
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Carrossel */
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-normal);
+    }
+    
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .footer-brand {
+        align-items: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Logo mobile */
+    .logo-image {
+        height: 35px;
+    }
+    
+    .footer-logo {
+        height: 45px;
+    }
+    
+    /* Serviços */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contato */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Avaliações */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Barbeiros - Mobile */
+    .barber-profile {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .barber-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-barber {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Foto de perfil dos barbeiros mobile */
+    .barber-profile-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    /* Social links */
+    .social-links {
+        flex-wrap: wrap;
+    }
+    
+    /* Botão voltar ao topo */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 320px) {
+    :root {
+        --font-size-hero: 28px;
+        --spacing-lg: 24px;
+        --spacing-xl: 24px;
+        --spacing-xxl: 32px;
+    }
+    
+    .service-card,
+    .contact-card,
+    .review-card,
+    .barber-profile {
+        padding: var(--spacing-md);
+    }
+    
+    /* Logo muito pequena */
+    .logo-image {
+        height: 30px;
+    }
+    
+    .footer-logo {
+        height: 40px;
+    }
+    
+    .barber-profile-img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Melhorias para telas grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    :root {
+        --font-size-hero: 56px;
+    }
+    
+    /* Logo em telas grandes */
+    .logo-image {
+        height: 60px;
+    }
+    
+    .footer-logo {
+        height: 70px;
+    }
+}
+
+/* Estados de focus para acessibilidade */
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Melhorias para modo escuro do sistema */
+@media (prefers-color-scheme: dark) {
+    /* As cores já estão otimizadas para modo escuro */
+}
+
+/* Animações reduzidas para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

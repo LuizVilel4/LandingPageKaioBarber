@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaio Barber - Transforme seu Visual</title>
+    <meta name="description" content="Kaio Barber - A melhor barbearia da região. Cortes modernos, barba bem feita e atendimento de qualidade.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABEÇALHO FIXO -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <!-- LOGO ATUALIZADA - Nova imagem da barbearia -->
+            <div class="nav-logo">
+                <img src="public/LogoBarbearia.jpeg" alt="Kaio Barber Logo" class="logo-image">
+            </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                <li><a href="#barbeiros" class="nav-link">Barbeiros</a></li>
+                <li><a href="#localizacao" class="nav-link">Localização</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+            </ul>
+            
+            <!-- Botão do menu mobile -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">Transforme seu visual na <span class="highlight">Kaio Barber</span></h1>
+                <p class="hero-description">
+                    Cortes modernos, barba impecável e atendimento profissional em um ambiente exclusivo e sofisticado.
+                </p>
+                <a href="#contato" class="btn-primary">
+                    <i class="fas fa-calendar-alt"></i>
+                    Agende seu horário
+                </a>
+            </div>
+            <!-- LOGO HERO - Nova imagem da barbearia para destaque -->
+            <div class="hero-image">
+                <img src="public/LogoBarbearia.jpeg" alt="Kaio Barber - Logo Principal">
+            </div>
+        </section>
+
+        <!-- SEÇÃO SERVIÇOS -->
+        <section class="services" id="servicos">
+            <div class="container">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-cut service-icon"></i>
+                        <h3>Corte Masculino</h3>
+                        <p>Cortes clássicos e modernos com técnicas profissionais</p>
+                        <span class="price">R$ 50,00</span>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-spa service-icon"></i>
+                        <h3>Barba & Bigode</h3>
+                        <p>Aparação e desenho profissional da barba</p>
+                        <span class="price">R$ 40,00</span>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-star service-icon"></i>
+                        <h3>Combo Completo</h3>
+                        <p>Corte + Barba + Finalizações</p>
+                        <span class="price">R$ 75,00</span>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-magic service-icon"></i>
+                        <h3>Tratamentos</h3>
+                        <p>Hidratação capilar e cuidados especiais</p>
+                        <span class="price">A Consultar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA DE CORTES - IMAGENS ATUALIZADAS -->
+        <section class="gallery" id="galeria">
+            <div class="container">
+                <h2 class="section-title">Galeria de Cortes</h2>
+                <div class="gallery-carousel">
+                    <div class="carousel-container">
+                        <!-- GALERIA PRINCIPAL ATUALIZADA com as novas imagens -->
+                        <div class="carousel-slide active">
+                            <img src="public/FotoGaleriaKaio.jpeg" alt="Corte artístico com desenho na nuca">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaKaio2.jpeg" alt="Corte platinado moderno">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaKaio3.jpeg" alt="Corte social com barba">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaKaio4.jpeg" alt="Corte fade lateral">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaPeterson1.jpeg" alt="Corte fade lateral">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaPeterson2.jpeg" alt="Corte fade lateral peterson">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaPeterson3.jpeg" alt="Corte fade lateral">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="public/FotoGaleriaPeterson4.jpeg" alt="Corte fade lateral">
+                        </div>
+                    </div>
+                    
+                    <!-- Botões de navegação -->
+                    <button class="carousel-btn prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                        <span class="indicator" data-slide="5"></span>
+                        <span class="indicator" data-slide="6"></span>
+                        <span class="indicator" data-slide="7"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             SEÇÃO: NOSSOS BARBEIROS - ATUALIZADA
+             ===================================== -->
+        <section class="barbers" id="barbeiros">
+            <div class="container">
+                <h2 class="section-title">Nossos Barbeiros</h2>
+                
+                <!-- BARBEIRO 1 - PETERSON - PERFIL ATUALIZADO -->
+                <div class="barber-profile">
+                    <div class="barber-info">
+                        <!-- FOTO DE PERFIL DO PETERSON -->
+                        <div class="barber-avatar">
+                            <img src="public/WhatsApp Image 2025-06-23 at 10.34.49.jpeg" alt="Peterson - Barbeiro Especialista" class="barber-profile-img">
+                        </div>
+                        <div class="barber-details">
+                            <h3 class="barber-name">Peterson</h3>
+                            <p class="barber-description">Especialista em cortes modernos e técnicas inovadoras. Com mais de 5 anos de experiência, Peterson é conhecido por sua precisão e criatividade em cada corte.</p>
+                            
+                            <!-- Botões de ação para Peterson - LINKS ATUALIZADOS -->
+                            <div class="barber-actions">
+                                <a href="https://wa.me/5511914355229?text=Quero+agendar+um+hor%C3%A1rio+com+o+Peterson+na+Kaio+Barber" class="btn-barber schedule" target="_blank">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar com Peterson
+                                </a>
+                                <a href="https://www.instagram.com/_petersoncabral?igsh=ejc3cGU5eDBqbHRh" class="btn-barber instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Galeria do Peterson - IMAGENS ATUALIZADAS -->
+                    <div class="barber-gallery">
+                        <div class="barber-carousel" id="peterson-carousel">
+                            <div class="barber-carousel-container">
+                                <div class="barber-slide active">
+                                    <img src="public/FotoGaleriaPeterson1.jpeg" alt="Corte artístico por Peterson">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaPeterson2.jpeg" alt="Fade profissional por Peterson">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaPeterson3.jpeg" alt="Corte estiloso por Peterson">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaPeterson4.jpeg" alt="Trabalho artístico por Peterson">
+                                </div>
+                            </div>
+                            
+                            <!-- Controles do carrossel Peterson -->
+                            <button class="barber-carousel-btn prev" data-carousel="peterson">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="barber-carousel-btn next" data-carousel="peterson">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            
+                            <!-- Indicadores Peterson -->
+                            <div class="barber-indicators">
+                                <span class="barber-indicator active" data-carousel="peterson" data-slide="0"></span>
+                                <span class="barber-indicator" data-carousel="peterson" data-slide="1"></span>
+                                <span class="barber-indicator" data-carousel="peterson" data-slide="2"></span>
+                                <span class="barber-indicator" data-carousel="peterson" data-slide="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BARBEIRO 2 - KAIO GARCIA - PERFIL ATUALIZADO -->
+                <div class="barber-profile">
+                    <div class="barber-info">
+                        <!-- FOTO DE PERFIL DO KAIO GARCIA -->
+                        <div class="barber-avatar">
+                            <img src="public/WhatsApp Image 2025-06-23 at 10.44.58.jpeg" alt="Kaio Garcia - Fundador" class="barber-profile-img">
+                        </div>
+                        <div class="barber-details">
+                            <h3 class="barber-name">Kaio Garcia</h3>
+                            <p class="barber-description">Referência em estilo e barba, Kaio Garcia é o fundador da barbearia. Especialista em barbas clássicas e cortes personalizados, sempre buscando a perfeição em cada detalhe.</p>
+                            
+                            <!-- Botões de ação para Kaio Garcia - LINKS ATUALIZADOS -->
+                            <div class="barber-actions">
+                                <a href="https://wa.me/5511985649328?text=Quero+agendar+um+hor%C3%A1rio+com+o+Kaio+Garcia+na+Kaio+Barber" class="btn-barber schedule" target="_blank">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Agendar com Kaio Garcia
+                                </a>
+                                <a href="https://www.instagram.com/kaio_garciaa_?igsh=MW81aTJsbnZpa3luOQ==" class="btn-barber instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Galeria do Kaio Garcia - IMAGENS ATUALIZADAS -->
+                    <div class="barber-gallery">
+                        <div class="barber-carousel" id="kaio-carousel">
+                            <div class="barber-carousel-container">
+                                <div class="barber-slide active">
+                                    <img src="public/FotoGaleriaKaio.jpeg" alt="Corte platinado por Kaio Garcia">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaKaio2.jpeg" alt="Corte premium por Kaio Garcia">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaKaio3.jpeg" alt="Estilo personalizado por Kaio Garcia">
+                                </div>
+                                <div class="barber-slide">
+                                    <img src="public/FotoGaleriaKaio4.jpeg" alt="Trabalho refinado por Kaio Garcia">
+                                </div>
+                            </div>
+                            
+                            <!-- Controles do carrossel Kaio Garcia -->
+                            <button class="barber-carousel-btn prev" data-carousel="kaio">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="barber-carousel-btn next" data-carousel="kaio">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            
+                            <!-- Indicadores Kaio Garcia -->
+                            <div class="barber-indicators">
+                                <span class="barber-indicator active" data-carousel="kaio" data-slide="0"></span>
+                                <span class="barber-indicator" data-carousel="kaio" data-slide="1"></span>
+                                <span class="barber-indicator" data-carousel="kaio" data-slide="2"></span>
+                                <span class="barber-indicator" data-carousel="kaio" data-slide="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO LOCALIZAÇÃO -->
+        <section class="location" id="localizacao">
+            <div class="container">
+                <h2 class="section-title">Nossa Localização</h2>
+                <div class="location-content">
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Endereço</h3>
+                                <p>R. Canal da Mancha, 196<br>Jardim Regina Alice, Barueri - SP</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Horário de Funcionamento</h3>
+                                <p>Terça à Sexta: 9h às 20h<br>Sábado: 9h às 20h<br>Domingo e Segundas: Fechado</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Telefone</h3>
+                                <p>(11)98564-9328</p>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="location-map">
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.297400356505!2d-46.85942072476816!3d-23.59300467878795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf01806602e9a1%3A0xf3c27c759183d3ff!2sR.%20Canal%20da%20Mancha%2C%20196%20-%20Jardim%20Regina%20Alice%2C%20Barueri%20-%20SP%2C%2006432-050!5e0!3m2!1spt-BR!2sbr!4v1719161222732!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO -->
+        <section class="contact" id="contato">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-grid">
+                    <a href="https://wa.me/5511985649328?text=Quero+agendar+um+hor%C3%A1rio+na+Kaio+Barber" class="contact-card whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>Agende pelo WhatsApp</p>
+                    </a>
+                    <a href="https://wa.me/11985649328?text=Quero+um+hor%C3%A1rio+na+Kaio+Barber" class="contact-card phone">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefone</h3>
+                        <p>(11)98564-9328</p>
+                    </a>
+                    <a href="mailto:contato@kaiobarber.com.br" class="contact-card email">
+                        <i class="fas fa-envelope"></i>
+                        <h3>E-mail</h3>
+                        <p>contato@kaiobarber.com.br</p>
+                    </a>
+                </div>
+                
+                <!-- Redes Sociais -->
+                <div class="social-media">
+                    <h3>Siga-nos nas redes sociais</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/kaio_garciaa_?igsh=MW81aTJsbnZpa3luOQ==" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/kaiobarber" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://tiktok.com/@kaiobarber" target="_blank" class="social-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO AVALIAÇÕES -->
+        <section class="reviews" id="avaliacoes">
+            <div class="container">
+                <h2 class="section-title">O que nossos clientes dizem</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Cliente Carlos" class="review-avatar">
+                            <div class="review-info">
+                                <h4>Carlos Silva</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Excelente atendimento! O Kaio é muito profissional e sempre deixa meu corte perfeito. Ambiente limpo e moderno."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Cliente Roberto" class="review-avatar">
+                            <div class="review-info">
+                                <h4>Roberto Santos</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Melhor barbearia da região! Corte impecável, ótimo preço e sempre no horário marcado. Super recomendo!"</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Cliente André" class="review-avatar">
+                            <div class="review-info">
+                                <h4>André Costa</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Ótimo trabalho! Ambiente acolhedor e profissional muito atencioso. Já virei cliente fiel da Kaio Barber."</p>
+                    </div>
+                </div>
+                
+                <!-- Rating geral -->
+                <div class="overall-rating">
+                    <div class="rating-number">4.8</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Baseado em 127 avaliações</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ - LOGO ATUALIZADA -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <!-- LOGO NO RODAPÉ ATUALIZADA -->
+                    <img src="LogoBarbearia.jpeg" alt="Kaio Barber Logo" class="footer-logo">
+                    <p>Transformando visual com estilo e profissionalismo</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/kaio_garciaa_?igsh=MW81aTJsbnZpa3luOQ==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/kaiobarber" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://tiktok.com/@kaiobarber" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kaio Barber. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
