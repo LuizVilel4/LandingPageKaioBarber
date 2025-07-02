@@ -225,17 +225,6 @@ body {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="90" cy="90" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="50" cy="30" r="1" fill="%23d4af37" opacity="0.1"/></svg>');
-    pointer-events: none;
-}
-
 .hero-content {
     flex: 1;
     max-width: 600px;
